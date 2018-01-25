@@ -1,0 +1,14 @@
+language: node
+
+cache:
+  directories:
+  - node_modules
+
+deploy:
+  provider: npm
+  email: nicholas.brink@mattersight.com
+  api_key:
+    secure: gbJy8GOGx2FNQ422NOSfphjL4nbaKKltCV4LS8IjMbvEiFZvGMysSyPXn4NN3hPuWDvKOug57oPhnThuUD6rPbJgZP6xmqNz9cMn0LAQl7lxHfqB2zdW/+tt1btJYpDHAPgJQCxsIseSw/cxflrjUudski4RnuKx2esdyO6sglfMlV99rSwbQgRYzIuL//HpJLt1A3HI5edv8lZ78N+sMJfw/ZoyADqxJgR7IRVcShJ4JUdAnZaZKivKf9aiqo+VA5heV8yuBfFLsbmbHhOadW137LgzbblnXzYXMOl+5E6QW8i1eJs8BHqF/Y6zdXY1Kn/Rs9ctkPbg3TvTQv+KZAWtB705xcWWDxeE8nqYQc4Nvv3Wp6jE48rW4r1ImtDFar54zgT2oMJwUND3KuDp4Ygr0jH8LYt3a/0BB0YAB831mIZ0np2tQvTi6YGadmAaedlP0DoVK3J3dUxyW33/jjHLY0tbdPt1PbC4115n9JPkHib6TrXzs0OweECAIVqwBHhO4jWbFCmFqKle/fDi2faFiRPb1qD3yuYt+N6AyWAIV/74ajtj9LExBD+gDdJUdnd+69XzpSaGOqLCm8oQejbnTXQmnG+EJJEEZ6a6BWGqHbf499rnuOA8fG4qP2e6QZTAcwQNV7xOmhQ4reLYAuXjoYVXTcplxypbUaNcc6s=
+  on:
+    tags: true
+    repo: nbrink91/karma-pact-reporter
