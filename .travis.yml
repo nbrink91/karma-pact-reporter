@@ -5,6 +5,7 @@ cache:
     - node_modules
 
 deploy:
+  tag: next
   provider: npm
   email: nicholas.brink@mattersight.com
   api_key:
