@@ -1,10 +1,6 @@
 os:
   - linux
 
-cache:
-  directories:
-    - node_modules
-
 deploy:
   tag: next
   provider: npm
