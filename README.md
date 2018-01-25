@@ -17,12 +17,19 @@ reporters: ['pact']
 
 Add a pactReporters section and configure according to the [Pact Node Broker Publishing](https://github.com/pact-foundation/pact-node#pact-broker-publishing) section.
 
+This library does include one extra option.
+
+Option | Type | Purpose | Default
+---|---|---|---
+deletePactFilesOrDirs | bool | Deletes all files in the pactFilesOrDirs array | false
+
+Here is an example configuration:
+
 ```json
 pactReporter: {
-    pactBroker: 'http://localhost',
-    consumerVersion: '1.0.0',
-    pactFilesOrDirs: [
-        'pact\\'
-    ]
+    pactBroker: process.env.PACT_BROKER_HOST || 'http://localhost',
+    consumerVersion: process.env.PACT_CONSUMER_VERSION || "0.0.1",
+    pactFilesOrDirs: [__dirname + '/pact'],
+    deletePactFilesOrDirs: true
 }
 ```
