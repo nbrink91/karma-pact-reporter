@@ -1,6 +1,18 @@
 os:
   - linux
 
+language: node
+
+node_js:
+  - "8"
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+  - npm install
+
 deploy:
   tag: next
   provider: npm
