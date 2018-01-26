@@ -1,6 +1,6 @@
 {
   "name": "@mattersight/karma-pact-reporter",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Karma Pact Publishing Reporter",
   "main": "index.js",
   "author": "Nicholas Brink <nicholas.brink@mattersight.com>",
