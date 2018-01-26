@@ -1,21 +1,21 @@
 {
-    "name": "@mattersight/karma-pact-reporter",
-    "version": "1.0.0",
-    "description": "Karma Pact Publishing Reporter",
-    "main": "index.js",
-    "author": "Nicholas Brink <nicholas.brink@mattersight.com>",
-    "license": "MIT",
-    "publishConfig": {
-        "access": "public"
-    },
-    "dependencies": {
-        "@pact-foundation/pact-node": "^6.7.3",
-        "rimraf": "^2.6.2"
-    },
-    "devDependencies": {
-        "standard-version": "^4.3.0"
-    },
-    "scripts": {
-        "release": "standard-version"
-    }
+  "name": "@mattersight/karma-pact-reporter",
+  "version": "1.1.0",
+  "description": "Karma Pact Publishing Reporter",
+  "main": "index.js",
+  "author": "Nicholas Brink <nicholas.brink@mattersight.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@pact-foundation/pact-node": "^6.7.3",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "standard-version": "^4.3.0"
+  },
+  "scripts": {
+    "release": "standard-version"
+  }
 }
