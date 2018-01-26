@@ -14,15 +14,23 @@ const PactReporter = function (baseReporterDecorator, config, logger) {
     const log = logger.create('reporter.pact');
     baseReporterDecorator(this);
 
-    const self = this;
+    let failure = false;
 
     // Create the publisher to make sure the configuration is valid before running.
     const publisher = pact.Publisher.create(config);
 
+    this.specFailure = function () {
+        failure = true;
+    };
+
     // On Karma Exit
-    self.onExit = function (done) {
-        // Publish the Pact file.
-        publisher.publish();
+    this.onExit = function (done) {
+        // Publish the Pact file on success.
+        if (!failure) {
+            publisher.publish();
+        } else {
+            log.error('Pact not uploaded to Pact Broker due to a spec failure.');
+        }
 
         // Configuration to remove files.
         if (config.deletePactFilesOrDirs) {
@@ -37,6 +45,7 @@ const PactReporter = function (baseReporterDecorator, config, logger) {
      * @param filesOrDirs Array of files to remove.
      */
     function removeFiles(filesOrDirs) {
+
         filesOrDirs.forEach(function (fileOrDir) {
 
             rmdir(fileOrDir, [], function(err) {
