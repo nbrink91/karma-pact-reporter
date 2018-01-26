@@ -21,3 +21,4 @@ deploy:
   on:
     tags: true
     repo: nbrink91/karma-pact-reporter
+    all_branches: true
