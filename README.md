@@ -11,8 +11,12 @@ npm i @mattersight/karma-pact-reporter --save-dev
 
 Add 'pact' to the list of reporters.
 
-```json
-reporters: ['pact']
+```js
+[
+    {
+        reporters: ['pact']
+    }
+]
 ```
 
 Add a pactReporters section and configure according to the [Pact Node Broker Publishing](https://github.com/pact-foundation/pact-node#pact-broker-publishing) section.
@@ -25,11 +29,15 @@ deletePactFilesOrDirs | bool | Deletes all files in the pactFilesOrDirs array | 
 
 Here is an example configuration:
 
-```json
-pactReporter: {
-    pactBroker: process.env.PACT_BROKER_HOST || 'http://localhost',
-    consumerVersion: process.env.PACT_CONSUMER_VERSION || "0.0.1",
-    pactFilesOrDirs: [__dirname + '/pact'],
-    deletePactFilesOrDirs: true
-}
+```js
+[
+    {
+        pactReporter: {
+            pactBroker: process.env.PACT_BROKER_HOST || 'http://localhost',
+            consumerVersion: process.env.PACT_CONSUMER_VERSION || "0.0.1",
+            pactFilesOrDirs: [__dirname + '/pact'],
+            deletePactFilesOrDirs: true
+        }
+    }
+]
 ```
