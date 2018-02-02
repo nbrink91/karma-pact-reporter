@@ -19,6 +19,7 @@ const PactReporter = function (baseReporterDecorator, config, logger) {
     // Create the publisher to make sure the configuration is valid before running.
     const publisher = pact.Publisher.create(config);
 
+    // Mark the test as a failure if one fails.
     this.specFailure = function () {
         failure = true;
     };
@@ -45,9 +46,7 @@ const PactReporter = function (baseReporterDecorator, config, logger) {
      * @param filesOrDirs Array of files to remove.
      */
     function removeFiles(filesOrDirs) {
-
         filesOrDirs.forEach(function (fileOrDir) {
-
             rmdir(fileOrDir, [], function(err) {
                 if (err) {
                     log.error(err);
